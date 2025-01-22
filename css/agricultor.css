@@ -119,7 +119,8 @@ header {
     justify-content: center; /* Centra orizzontalmente il contenuto */
     align-items: flex-start; /* Allinea il contenuto in alto */
     padding: 20px; /* Spaziatura interna */
-    background-color: #f9f9f9; /* Sfondo bianco/grigio chiaro */
+    /* background-color: #f9f9f9; Sfondo bianco/grigio chiaro */
+    margin-top: 8rem;
 }
 
 .horta-nord {
@@ -144,6 +145,9 @@ header {
     margin-bottom: 20px; /* Spaziatura sotto l'immagine */
 }
 
+.nombre__agricultor{
+    margin-bottom: 1rem;
+}
 /* Descrizione */
 .horta-description {
     width: 100%; /* Larghezza completa del contenitore */
@@ -308,3 +312,33 @@ header {
         height: 26px;
     }
 }
+
+/*********** INICIO FOOTER ***********/
+
+.wrap__footer {
+    width: 100%;
+    min-height: 5rem;
+    background-color: rgb(238, 233, 139);
+
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer__nav {
+    padding: 0 2rem;
+}
+
+.footer__nav__ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.footer__nav__li {}
+
+/*********** FIN FOOTER ***********/
