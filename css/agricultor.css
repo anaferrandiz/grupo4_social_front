@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+p a {
+    display: inline;
+}
+
+img,
+picture,
+video,
+iframe {
+    display: block;
+    width: 100%;
+    /* height: initial; */
+}
+
+form,
+input,
+label,
+select,
+option,
+textarea,
+button {
+    font-size: inherit;
+    font-family: inherit;
+    display: block;
+    background-color: transparent;
+}
+
+:root {
+    font-size: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Lexend", serif;
+    font-style: normal;
+}
+
+
+/* Resetta margini e padding */
+* {
+    margin: 0; /* Rimuove margini predefiniti */
+    padding: 0; /* Rimuove padding predefiniti */
+    box-sizing: border-box; /* Include i bordi e il padding nelle dimensioni degli elementi */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Imposta il font principale */
+}
+
+header {
+    background-color: #cccccc; /* Sfondo della barra di navigazione */
+    padding: 10px 20px; /* Spaziatura interna */
+}
+
+.navbar {
+    display: flex; /* Dispone gli elementi in una riga */
+    justify-content: space-between; /* Spaziatura tra logo e link */
+    align-items: center; /* Allinea gli elementi verticalmente */
+}
+
+.logo {
+    font-size: 24px; /* Dimensione del testo del logo */
+    font-weight: bold; /* Testo in grassetto */
+}
+
+.nav-links {
+    list-style: none; /* Rimuove i puntini della lista */
+    display: flex; /* Dispone i link in una riga */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Spaziatura tra i link */
+}
+
+.nav-links a {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: black; /* Colore del testo */
+    font-size: 16px; /* Dimensione del testo */
+    padding: 5px 10px; /* Spaziatura interna dei link */
+    border-radius: 5px; /* Aggiunge angoli arrotondati */
+}
+
+.nav-links a:hover {
+    background-color: #e0e0e0; /* Cambia il colore di sfondo al passaggio del mouse */
+}
+
+/* Contenitore principale */
+.main-container {
+    display: flex; /* Dispone gli elementi in una riga */
+    justify-content: center; /* Centra orizzontalmente il contenuto */
+    align-items: flex-start; /* Allinea il contenuto in alto */
+    padding: 20px; /* Spaziatura interna */
+    background-color: #f9f9f9; /* Sfondo bianco/grigio chiaro */
+}
+
+.horta-nord {
+    display: flex; /* Dispone gli elementi in una colonna */
+    flex-direction: column;
+    align-items: center; /* Centra gli elementi al centro */
+    background-color: #ffffff; /* Sfondo bianco */
+    border: 1px solid #cccccc; /* Bordo grigio chiaro */
+    border-radius: 10px; /* Angoli arrotondati */
+    padding: 20px; /* Spaziatura interna */
+    width: 80%; /* Larghezza del contenitore */
+    max-width: 1200px; /* Larghezza massima */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra */
+}
+
+/* Immagine "Horta Nord" */
+.horta-image {
+    width: 100px; /* Larghezza dell'immagine */
+    height: 100px; /* Altezza dell'immagine */
+    background-color: #e0e0e0; /* Colore di sfondo grigio */
+    border-radius: 50%; /* Forma circolare */
+    margin-bottom: 20px; /* Spaziatura sotto l'immagine */
+}
+
+/* Descrizione */
+.horta-description {
+    width: 100%; /* Larghezza completa del contenitore */
+    height: 150px; /* Altezza della descrizione */
+    background-color: #f0f0f0; /* Sfondo grigio chiaro */
+    border-radius: 10px; /* Angoli arrotondati */
+}
+
+/* Sezione dei pulsanti dei prodotti */
+.product-buttons {
+    display: flex; /* Dispone i pulsanti in una riga */
+    justify-content: center; /* Centra i pulsanti orizzontalmente */
+    gap: 10px; /* Spaziatura tra i pulsanti */
+    margin: 20px 0; /* Margine sopra e sotto */
+}
+
+.product-buttons button {
+    padding: 10px 20px; /* Spaziatura interna */
+    border: 1px solid #cccccc; /* Bordo grigio chiaro */
+    border-radius: 20px; /* Angoli arrotondati */
+    background-color: #ffffff; /* Sfondo bianco */
+    color: #333333; /* Colore del testo */
+    font-size: 14px; /* Dimensione del testo */
+    cursor: pointer; /* Cambia il cursore in "pointer" */
+    transition: background-color 0.3s, color 0.3s; /* Aggiunge una transizione morbida */
+}
+
+.product-buttons button:hover {
+    background-color: #cccccc; /* Cambia il colore di sfondo al passaggio del mouse */
+    color: white; /* Cambia il colore del testo al passaggio del mouse */
+}
+
+/* Sezione delle schede */
+.product-cards {
+    display: flex; /* Dispone le schede in una colonna */
+    flex-direction: column;
+    gap: 20px; /* Spaziatura tra le schede */
+    padding: 20px; /* Spaziatura interna */
+    width: 100%; /* Larghezza completa */
+    max-width: 1200px; /* Larghezza massima */
+    margin: 0 auto; /* Centra la sezione */
+}
+
+/* Singola scheda */
+.card {
+    display: flex; /* Dispone gli elementi in una riga */
+    align-items: center; /* Allinea gli elementi verticalmente */
+    background-color: #ffffff; /* Sfondo bianco */
+    border: 1px solid #cccccc; /* Bordo grigio chiaro */
+    border-radius: 10px; /* Angoli arrotondati */
+    padding: 15px; /* Spaziatura interna */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra */
+}
+
+/* Immagine della scheda */
+.card-image {
+    width: 80px; /* Larghezza dell'immagine */
+    height: 80px; /* Altezza dell'immagine */
+    background-color: #e0e0e0; /* Sfondo grigio chiaro */
+    border-radius: 10px; /* Angoli arrotondati */
+    margin-right: 20px; /* Spaziatura a destra */
+}
+
+/* Contenuto della scheda */
+.card-content {
+    flex: 1; /* Occupa lo spazio rimanente nella scheda */
+    height: 60px; /* Altezza del contenuto */
+    background-color: #f0f0f0; /* Sfondo grigio chiaro */
+    border-radius: 10px; /* Angoli arrotondati */
+}
+
+
+.header {
+    width: 100%;
+    min-height: 3rem;
+    font-size: 1.1em;
+    background-color: rgb(238, 233, 139, 0.7);
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 2rem;
+}
+
+.header__h1 {
+    font-weight: bold;
+}
+
+.header__button {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+    padding-bottom: .3rem;
+}
+
+.header__nav {
+    position: relative;
+}
+
+.nav__ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav__li {
+    /* background-color: rgb(121, 121, 160); */
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.nav__li:hover {
+    color: rgb(99, 99, 99);
+    transform: scale(1.1, 1.1);
+
+}
+
+@media (max-width: 700px) {
+
+    .header{
+        padding: 0 0rem;
+    }
+
+    .header__h1, .header__button{
+        padding: 0 2rem;
+    }
+    .header__button {
+        display: block;
+    }
+
+    .header__nav {
+        width: 100%;
+        display: none;
+    }
+
+    .header__nav.isActive {
+        display: block;
+    }
+
+    .nav__ul {
+        width: 100%;
+        min-height: 100vh;
+
+        flex-direction: column;
+        justify-content: center;
+        backdrop-filter: blur(5rem);
+        font-size: 1.5em;
+        gap: 2rem;
+        position: absolute;
+    }
+
+    .header__icon {
+        width: 26px;
+        height: 26px;
+    }
+}
