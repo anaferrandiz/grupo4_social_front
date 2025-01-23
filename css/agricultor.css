@@ -65,17 +65,6 @@ body {
 }
 
 
-/* Resetta margini e padding */
-* {
-    margin: 0; /* Rimuove margini predefiniti */
-    padding: 0; /* Rimuove padding predefiniti */
-    box-sizing: border-box; /* Include i bordi e il padding nelle dimensioni degli elementi */
-}
-
-body {
-    font-family: Arial, sans-serif; /* Imposta il font principale */
-}
-
 header {
     background-color: #cccccc; /* Sfondo della barra di navigazione */
     padding: 10px 20px; /* Spaziatura interna */
