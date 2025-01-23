@@ -53,6 +53,7 @@ button {
 
 :root {
     font-size: 100%;
+    --color-general:  rgb(238, 233, 139);
 }
 
 html {
@@ -118,13 +119,13 @@ body {
 .nav__li:hover {
     color: rgb(99, 99, 99);
     transform: scale(1.1, 1.1);
-
 }
 
 @media (max-width: 700px) {
 
     .header{
         padding: 0 0rem;
+        z-index: 2;
     }
 
     .header__h1, .header__button{
@@ -149,12 +150,17 @@ body {
 
         flex-direction: column;
         justify-content: center;
-        backdrop-filter: blur(5rem);
+        backdrop-filter: blur(6rem);
+        background-color: rgb(238, 233, 139, 0.4);
         font-size: 1.5em;
         gap: 2rem;
         position: absolute;
     }
 
+    .nav__li:hover {
+        color: rgb(255, 251, 251);
+        
+    }
     .header__icon {
         width: 26px;
         height: 26px;
@@ -175,7 +181,7 @@ body {
     filter: drop-shadow(.1rem .1rem 0.20rem black);
     cursor: pointer;
     rotate: -90deg;
-    z-index: 0;
+    z-index: 1;
 }
 .section__wrapper {
     width: 100%;
@@ -202,6 +208,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+
+    position: relative;
 }
 
 .section__zones {
@@ -210,22 +218,39 @@ body {
 
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
 .zone__h3 {
     font-weight: bold;
+    font-size: 2.5vw;
     margin-bottom: .6rem;
+    position: absolute;
+    color: rgb(255, 255, 255);
+    z-index: 1;
 
 }
 
 .zone__image-wrapper {
     width: 100%;
-    background-color: rgb(238, 233, 139);
+    /* background-color: rgb(238, 233, 139); */
     min-height: 11rem;
     border-radius: 1rem;
+    
 }
+
+.zone__image-wrapper picture img{
+    border-radius: 2rem;
+    filter: brightness(85%);
+}
+
+.zone__image-wrapper picture img:hover{
+    filter: brightness(65%);
+    transform: scale(1.03,1.03);
+
+}
+
 
 @media (max-width: 700px) {
     .wrap__section__zones {
@@ -233,7 +258,13 @@ body {
     }
 
     .section__wrapper {
-        min-height: 60rem;
+        /* min-height: 90rem; */
+        margin-top: 8rem;
+        margin-bottom: 4rem;
+    }
+
+    .zone__h3 {
+        font-size: 3em;
     }
 }
 
@@ -245,7 +276,7 @@ body {
 .wrap__footer {
     width: 100%;
     min-height: 5rem;
-    background-color: rgb(238, 233, 139);
+    background-color:var(--color-general);
 
 
     display: flex;
