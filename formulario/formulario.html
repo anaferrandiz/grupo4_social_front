@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Huerta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="formulario.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+   <!-- *********** INICIO HEADER *********** -->
+  <header class="header">
+    <h1 class="header__h1">
+      <a href="../index.html"> Menja Horta</a>
+    </h1>
+    <button class="header__button">&#9776;</button>
+    <nav class="header__nav">
+      <ul class="nav__ul">
+        <li class="nav__li">
+          <a href="../formulario/formulario.html">Soy agricultor</a>
+        </li>
+        <li class="nav__li">
+          <a href="../html/agricultores.html">Agricultores</a>
+        </li>
+        <li class="nav__li">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="header__icon"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+            />
+          </svg>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- *********** FIN HEADER *********** --></header>
+    <div class="container mt-5">
+      <h1 class="text-center">Formulario de Registro de Agricultor</h1>
+      <h2 class="mt-4">Información Personal</h2>
+      <form id="huertaForm" enctype="multipart/form-data">
+        <!-- Datos personales -->
+        <div class="mb-3">
+          <label for="fotoPerfil" class="form-label">Foto de Perfil</label>
+          <input
+            type="file"
+            class="form-control"
+            id="fotoPerfil"
+            name="fotoPerfil"
+            accept="image/*"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="apellidos" class="form-label">Apellidos</label>
+          <input
+            type="text"
+            class="form-control"
+            id="apellidos"
+            name="apellidos"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripción</label>
+          <textarea
+            class="form-control"
+            id="descripcion"
+            name="descripcion"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="direccion" class="form-label">Dirección</label>
+          <input
+            type="text"
+            class="form-control"
+            id="direccion"
+            name="direccion"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="telefono"
+            name="telefono"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <!-- Información de la Huerta -->
+        <h2 class="mt-4">Información de la Huerta</h2>
+        <div class="mb-3">
+          <label for="direccionHuerta" class="form-label">Dirección</label>
+          <input
+            type="text"
+            class="form-control"
+            id="direccionHuerta"
+            name="direccionHuerta"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="horarios" class="form-label">Horarios</label>
+          <input
+            type="text"
+            class="form-control"
+            id="horarios"
+            name="horarios"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="fotosHuerta" class="form-label"
+            >Fotos de la Huerta (al menos 3)</label
+          >
+          <input
+            type="file"
+            class="form-control"
+            id="fotosHuerta"
+            name="fotosHuerta"
+            accept="image/*"
+            multiple
+            required
+          />
+        </div>
+
+        <!-- Productos -->
+        <h2 class="mt-4">Productos</h2>
+        <div class="mb-3">
+          <label for="disponibilidad" class="form-label">Disponibilidad</label>
+          <select
+            class="form-select"
+            id="disponibilidad"
+            name="disponibilidad"
+            required
+        >
+          <option value="envio">Caja grande</option>
+          <option value="recogida">Caja mediana</option>
+          <option value="envio">Caja pequeña</option>
+          <option value="recogida">Caja sólo frutas</option>
+          <option value="recogida">Caja sólo verduras</option>
+        </select>
+        </div>
+        <div class="mb-3">
+          <label for="precio" class="form-label">Precio</label>
+          <input
+            type="number"
+            class="form-control"
+            id="precio"
+            name="precio"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="envioRecogida" class="form-label">Envío o Recogida</label>
+          <select
+            class="form-select"
+            id="envioRecogida"
+            name="envioRecogida"
+            required
+          >
+            <option value="envio">Envío</option>
+            <option value="recogida">Recogida</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="tipoPago" class="form-label">Tipo de Pago</label>
+          <select class="form-select" id="tipoPago" name="tipoPago" required>
+            <option value="tarjeta">Tarjeta</option>
+            <option value="efectivo">Efectivo</option>
+          </select>
+        </div>
+
+        <!-- Barra de progreso -->
+        <div class="progress mb-3">
+          <div
+            id="progressBar"
+            class="progress-bar"
+            role="progressbar"
+            style="width: 0%"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+
+        <!-- Botón de envío -->
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
