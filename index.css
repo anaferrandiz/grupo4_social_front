@@ -61,7 +61,7 @@ html {
 }
 
 body {
-    font-family: "Lexend", serif;
+    font-family: "Lexend";
     font-style: normal;
 }
 
@@ -220,6 +220,8 @@ body {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
 
 .zone__h3 {

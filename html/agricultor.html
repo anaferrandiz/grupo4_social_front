@@ -9,16 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Titolo della pagina che appare nella scheda del browser -->
-  <title>Pagina Agricultor</title>
-
+  <title>Menja Horta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
   <!-- Collegamento al file CSS esterno per lo stile della pagina -->
   <link rel="stylesheet" href="../css/agricultor.css">
 </head>
 
+
+<!-- Il contenuto del sito web inizia qui -->
+
 <body>
-  <!-- Il contenuto del sito web inizia qui -->
-
-
 
   <header class="header">
     <h1 class="header__h1">
@@ -42,36 +42,69 @@
 
 
   <main>
-    <section class="main-container"> <!-- Contenitore principale -->
-      <div class="horta-nord"> <!-- Sezione "Horta Nord" -->
-        <div class="horta-image"></div> <!-- Spazio per l'immagine di "Horta Nord" -->
-        <p class="nombre__agricultor">Paulaa</p>
-        <div class="horta-description"></div> <!-- Spazio per la descrizione di "Horta Nord" -->
+
+    <div class="section__agric">
+      <div class="wrap__h3__img">
+        <div class="agric__image-wrapper">
+          <picture>
+            <source srcset="../assets/paula_s.webp" media="(max-width:1000px)">
+            <img src="../assets/paula.webp" alt="Imagen de huerta" class="agric__image" loading="lazy">
+          </picture>
+        </div>
       </div>
-    </section>
+      <div class="section">
+        <div class="agric__data">
+          <h3 class="agric__name">Paula</h3>
+          <p class="agric__description">Paula es una agricultora apasionada por el cultivo ecológico, con especial
+            interés
+            en las huertas tradicionales de la comarca de la Ribera. Lleva más de 10 años en el sector, destacando por
+            su
+            dedicación a la producción de verduras autóctonas. Además, lleva una pequeña tienda de productos frescos en
+            el
+            centro de Sueca, donde se pueden encontrar desde tomates hasta calabazas cultivadas sin químicos.
+          </p>
+
+          <p class="agric__description">También ha sido una defensora del cultivo sin químicos, y su esfuerzo por
+            mantener la biodiversidad de su huerta ha permitido que se genere un ecosistema equilibrado donde las
+            plantas
+            se complementan entre sí. Además, trabaja con otras pequeñas huertas de la comarca, formando una red de
+            agricultores que comparten los mismos principios ecológicos y colaboran para ofrecer productos frescos y
+            locales. </p>
+          <div class="wrap__contact">
+            
+              <p class="agric__contact">
+                  <a href="tel:+34679645345">📞 679 645 345</a>
+              </p>
+              
+              <p class="agric__contact">
+                  <a href="https://www.google.com/maps?q=Calle+de+la+Muntanya,+33,+Valencia" target="_blank">Calle de la Muntanya, 33, Valencia</a>
+              </p>  
+              
+              <p class="agric__contact">
+                  <a href="mailto:paula.ferrer@hortalizasferrer.com">paula.ferrer@hortalizasferrer.com</a>
+              </p>
+          
+          
+
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap__caja">
+        <h4 class="agric__caja agric__name">La caja</h4>
+        <p class="p__agric__caja__p">Las cajas ya compuestas son selecciones de frutas y verduras frescas, ecológicas y de temporada, listas para llevar. Incluyen productos locales y autóctonos de la Ribera, ideales para quienes buscan comodidad y calidad.</p>
+        <div class="wrap__agric__caja__img">
+          <picture>
+            <source srcset="../assets/caja_paula_s.webp" media="(max-width:1000px)">
+            <img src="../assets/caja_paula.webp" alt="Imagen de huerta" class="caja__img"
+                loading="lazy">
+        </picture>
+        </div>
+      </div>
+
+    </div>
 
 
-    <section class="product-buttons"> <!-- Sezione dei pulsanti dei prodotti -->
-      <button>Producto 1</button> <!-- Pulsante per il prodotto 1 -->
-      <button>Producto 2</button> <!-- Pulsante per il prodotto 2 -->
-      <button>Producto 3</button> <!-- Pulsante per il prodotto 3 -->
-      <button>Producto 4</button> <!-- Pulsante per il prodotto 4 -->
-    </section>
-
-    <section class="product-cards"> <!-- Sezione delle schede dei prodotti -->
-      <div class="card"> <!-- Prima scheda -->
-        <div class="card-image"></div> <!-- Spazio per l'immagine della scheda -->
-        <div class="card-content"></div> <!-- Spazio per il contenuto della scheda -->
-      </div>
-      <div class="card"> <!-- Seconda scheda -->
-        <div class="card-image"></div> <!-- Spazio per l'immagine della scheda -->
-        <div class="card-content"></div> <!-- Spazio per il contenuto della scheda -->
-      </div>
-      <div class="card"> <!-- Terza scheda -->
-        <div class="card-image"></div> <!-- Spazio per l'immagine della scheda -->
-        <div class="card-content"></div> <!-- Spazio per il contenuto della scheda -->
-      </div>
-    </section>
 
   </main>
 
