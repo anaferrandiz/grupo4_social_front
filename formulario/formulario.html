@@ -6,13 +6,38 @@
     <title>Formulario</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="formulario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<!-- *********** INICIO HEADER *********** -->
+<header class="header">
+    <h1 class="header__h1">
+        <a href="../index.html"> Menja Horta</a>
+    </h1>
+    <button class="header__button">&#9776;</button>
+    <nav class="header__nav">
+        <ul class="nav__ul">
+            <li class="nav__li">
+                <a href="../formulario/formulario.html">Soy agricultor</a>
+            </li>
+            <li class="nav__li">
+                <a href="../html/agricultores.html">Agricultores</a>
+            </li>
+            <li class="nav__li"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="header__icon" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                </svg></li>
+        </ul>
+    </nav>
+</header>
+<!-- *********** FIN HEADER *********** -->
 <div class="container mt-5">
     <!-- Sección de Datos Personales -->
     <div class="form-container active" id="form1">
-        <h2>Formulario de Datos Personales</h2>
+        <p>DATOS PERSONALES</p>
         <form id="personalForm">
             <div class="mb-3">
                 <label>Foto de perfil</label>
@@ -44,7 +69,7 @@
 
     <!-- Sección de Espacio / Huerta -->
     <div class="form-container" id="form2">
-        <h2>Espacio / Huerta</h2>
+        <p>ESPACIO | HUERTA</p>
         <form id="huertaForm">
             <div class="mb-3">
                 <label>Localización</label>
@@ -70,7 +95,7 @@
 
     <!-- Sección de Productos -->
     <div class="form-container" id="form3">
-        <h2>Productos</h2>
+        <p>PRODUCTOS</p>
         <form id="productosForm">
             <div class="mb-3">
                 <label>Tipo de caja</label>
