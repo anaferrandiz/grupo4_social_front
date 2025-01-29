@@ -1,0 +1,13 @@
+.form-container {
+  display: none;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container.active {
+  display: block;
+}
