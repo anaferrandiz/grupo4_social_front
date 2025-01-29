@@ -14,7 +14,7 @@
 <!-- *********** INICIO HEADER *********** -->
 <header class="header">
     <h1 class="header__h1">
-        <a href="../index.html"> Menja Horta</a>
+        <a href="index.html"> Menja Horta</a>
     </h1>
     <button class="header__button">&#9776;</button>
     <nav class="header__nav">
@@ -73,7 +73,13 @@
         <form id="huertaForm">
             <div class="mb-3">
                 <label>Localización</label>
-                <input type="text" class="form-control" required>
+                <select class="form-control" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="envio">Horta Nord</option>
+                    <option value="envio">Horta Sud</option>
+                    <option value="envio">Horta Est</option>
+
+                </select>
             </div>
             <div class="mb-3">
                 <label>Horarios</label>
