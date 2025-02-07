@@ -22,7 +22,7 @@ const headers = {
     },
     body: JSON.stringify(agricultor)
 };
-fetch("localhost:3000/agricultores", headers)
+fetch("http://localhost:3000/agricultores", headers)
 .then(res => res.json())
 .then(data => {
     console.log(data);
