@@ -38,32 +38,32 @@
     <!-- Sección de Datos Personales -->
     <div class="form-container active" id="form1">
         <p>DATOS PERSONALES</p>
-        <form id="personalForm">
+        <form id="form-agricultor">
             <div class="mb-3">
                 <label>Foto de perfil</label>
                 <input type="file" class="form-control" accept="image/*">
             </div>
             <div class="mb-3">
-                <label>Nombre</label>
-                <input type="text" class="form-control" required>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label>Apellidos</label>
-                <input type="text" class="form-control" required>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label>Dirección</label>
-                <input type="text" class="form-control" required>
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label>Teléfono</label>
-                <input type="tel" class="form-control" required>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label>Email</label>
-                <input type="email" class="form-control" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
             </div>
-            <button type="button" class="btn btn-primary next-btn">Siguiente →</button>
+            <button type="submit" class="btn btn-primary next-btn">Siguiente →</button>
         </form>
     </div>
 

@@ -1,29 +1,26 @@
-const express = require("express");
-const multer = require("multer");
-const cors = require("cors");
+document.getElementById("form-agricultor").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evitar recarga de página
 
-const app = express();
-const upload = multer({ dest: "uploads/" });
+    // Obtener datos del formulario
+    const formData = new FormData(event.target);
+    const agricultor = {
+        nombre: formData.get("nombre"),
+        direccion: formData.get("direccion"),
+        telefono: formData.get("telefono"),
+        email: formData.get("email")
+    };
 
-app.use(cors());
-app.use(express.json());
+    console.log("Enviando agricultor:", agricultor); // Para depuración
 
-/*app.post("/submit", upload.array("huertaFotos", 10), (req, res) => {
-    if (req.files.length < 3) {
-        return res.status(400).json({ error: "Debe subir al menos 3 fotos de la huerta." });
-    }
-    res.json({ success: true, message: "Formulario enviado correctamente." });
-});*/
-
-const headers = {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(agricultor)
-};
-fetch("http://localhost:3000/agricultores", headers)
-.then(res => res.json())
-.then(data => {
-    console.log(data);
-})
+    // Enviar al backend con fetch
+    fetch("http://localhost:3000/agricultores", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(agricultor)
+    })
+    .then(response => response.json())
+    .then(data => console.log("Respuesta del servidor:", data))
+    .catch(error => console.error("Error en fetch:", error));
+});
