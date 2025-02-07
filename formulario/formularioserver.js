@@ -8,11 +8,22 @@ const upload = multer({ dest: "uploads/" });
 app.use(cors());
 app.use(express.json());
 
-app.post("/submit", upload.array("huertaFotos", 10), (req, res) => {
+/*app.post("/submit", upload.array("huertaFotos", 10), (req, res) => {
     if (req.files.length < 3) {
         return res.status(400).json({ error: "Debe subir al menos 3 fotos de la huerta." });
     }
     res.json({ success: true, message: "Formulario enviado correctamente." });
-});
+});*/
 
-app.listen(3000, () => console.log("Servidor en http://localhost:3000"));
+const headers = {
+    method: "post",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(agricultor)
+};
+fetch("http:localhost:3000/agricultores", headers)
+.then(res => res.json())
+.then(data => {
+    console.log(data);
+})

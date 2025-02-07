@@ -50,3 +50,4 @@ document.getElementById("precio").addEventListener("input", function (e) {
         e.target.value = num.toFixed(2);
     }
 });
+
