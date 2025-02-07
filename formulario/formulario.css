@@ -3,6 +3,7 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
+
 }
 
 li {
@@ -18,7 +19,7 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
-
+/* menja horta*/
 a {
   color: inherit;
   text-decoration: none;
@@ -109,7 +110,6 @@ body {
 }
 
 .nav__li {
-  /* background-color: rgb(121, 121, 160); */
   padding: .5rem 1rem;
   border-radius: 1rem;
   cursor: pointer;
@@ -122,7 +122,7 @@ body {
 }
 
 @media (max-width: 700px) {
-
+/*nose*/
   .header{
       padding: 0 0rem;
       z-index: 2;
@@ -144,6 +144,7 @@ body {
       display: block;
   }
 
+/*nose*/
   .nav__ul {
       width: 100%;
       min-height: 100vh;
@@ -151,7 +152,7 @@ body {
       flex-direction: column;
       justify-content: center;
       backdrop-filter: blur(6rem);
-      background-color: rgb(238, 233, 139, 0.4);
+      background-color: rgba(80, 76, 76, 0.4);
       font-size: 1.5em;
       gap: 2rem;
       position: absolute;
@@ -166,9 +167,9 @@ body {
       height: 26px;
   }
 }
-
-
 /*********** FIN HEADER ***********/
+
+/*fondo formulario*/
 .form-container {
   display: none;
   max-width: 500px;
@@ -179,6 +180,7 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
+/*Titulos*/
 .form-container.active {
   display: block;
 }
