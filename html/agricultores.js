@@ -1,15 +1,9 @@
-const headers = {
-    method: "get",
-    headers: {
-        "Content-Type": "application/json"
-    },
-};
-fetch("localhost:3000/agricultores", headers)
-.then(res => res.json())
-.then(data => {
-    console.log(data);
+document.addEventListener("DOMContentLoaded", async () => { 
+const agricultores = await getAgricultores();
+if (agricultores) {
+    printAgricultores (agricultores)
+}
 })
-
 const getAgricultores = () => {
     return fetch('localhost:3000/agricultores')
         .then((response) => {
@@ -23,3 +17,13 @@ const getAgricultores = () => {
             throw new Error('Error al cargar la pagina');
         });
 };
+
+const printAgricultores = (agricultores) => {
+const list = document.getElementById("agric__data");
+list.innerHTML='';
+agricultores.forEach(agricultor => { 
+    const item = document.createElement('li');
+    item.textContent = agricultor.name;
+    list.appendChild(item);
+});
+}
