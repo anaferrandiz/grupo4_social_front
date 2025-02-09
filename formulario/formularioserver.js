@@ -1,69 +1,53 @@
-// Objeto donde se almacenarán todos los datos del formulario
-let agricultorData = {};
 
 // Convertir imágenes a Base64
-function toBase64(file) {
+async function toBase64(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = () => resolve(reader.result);
         reader.onerror = (error) => reject(error);
     });
+
+    let fotoBase64 = "";
+    if (fotoFile) {
+        fotoBase64 = await toBase64(fotoFile);
+    }
+    let huertaFotosBase64 = [];
+    for (let file of huertaFotosInput) {
+        huertaFotosBase64.push(await toBase64(file));
+    }
 }
 
-// Guardar datos personales
-async function savePersonalData() {
-    const fotoFile = document.querySelector('input[type="file"]').files[0];
+
+// Enviar datos al backend
+async function sendData() {
+    //const fotoFile = document.querySelector('input[type="file"]').files[0];
     const nombre = document.getElementById("nombre").value;
     const apellidos = document.getElementById("apellidos").value;
     const direccion = document.getElementById("direccion").value;
     const telefono = document.getElementById("telefono").value;
     const email = document.getElementById("email").value;
-    
-    let fotoBase64 = "";
-    if (fotoFile) {
-        fotoBase64 = await toBase64(fotoFile);
-    }
-
-    agricultorData = {
-        nombre,
-        apellidos,
-        direccion,
-        telefono,
-        email,
-        fotoPerfil: fotoBase64
-    };
-}
-
-// Guardar datos de la huerta
-async function saveHuertaData() {
     const localizacion = document.querySelector("#form2 select").value;
     const horarios = document.querySelector("#form2 input").value;
     const descripcion = document.querySelector("#form2 textarea").value;
-    const huertaFotosInput = document.getElementById("huertaFotos").files;
-
-    let huertaFotosBase64 = [];
-    for (let file of huertaFotosInput) {
-        huertaFotosBase64.push(await toBase64(file));
-    }
-
-    agricultorData.huerta = {
-        localizacion,
-        horarios,
-        descripcion,
-        fotos: huertaFotosBase64
-    };
-}
-
-// Enviar datos al backend
-async function sendData() {
+    //const huertaFotosInput = document.getElementById("huertaFotos").files;
     const tipoCaja = document.querySelector("#form3 select:nth-child(1)").value;
     const disponibilidad = document.querySelector("#form3 select:nth-child(2)").value;
     const precio = document.getElementById("precio").value;
     const envioRecogida = document.querySelector("#form3 select:nth-child(3)").value;
     const tipoPago = document.querySelector("#form3 select:nth-child(4)").value;
 
-    agricultorData.productos = {
+    const agricultorData = {
+        nombre,
+        apellidos,
+        direccion,
+        telefono,
+        email,
+        //fotoPerfil: fotoBase64,
+        localizacion,
+        horarios,
+        descripcion,
+        //fotos: huertaFotosBase64,
         tipoCaja,
         disponibilidad,
         precio,
