@@ -1,26 +1,137 @@
-document.getElementById("form-agricultor").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evitar recarga de página
+// Objeto donde se almacenarán todos los datos del formulario
+let agricultorData = {};
 
-    // Obtener datos del formulario
-    const formData = new FormData(event.target);
-    const agricultor = {
-        nombre: formData.get("nombre"),
-        direccion: formData.get("direccion"),
-        telefono: formData.get("telefono"),
-        email: formData.get("email")
+// Convertir imágenes a Base64
+function toBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+    });
+}
+
+// Guardar datos personales
+async function savePersonalData() {
+    const fotoFile = document.querySelector('input[type="file"]').files[0];
+    const nombre = document.getElementById("nombre").value;
+    const apellidos = document.getElementById("apellidos").value;
+    const direccion = document.getElementById("direccion").value;
+    const telefono = document.getElementById("telefono").value;
+    const email = document.getElementById("email").value;
+    
+    let fotoBase64 = "";
+    if (fotoFile) {
+        fotoBase64 = await toBase64(fotoFile);
+    }
+
+    agricultorData = {
+        nombre,
+        apellidos,
+        direccion,
+        telefono,
+        email,
+        fotoPerfil: fotoBase64
+    };
+}
+
+// Guardar datos de la huerta
+async function saveHuertaData() {
+    const localizacion = document.querySelector("#form2 select").value;
+    const horarios = document.querySelector("#form2 input").value;
+    const descripcion = document.querySelector("#form2 textarea").value;
+    const huertaFotosInput = document.getElementById("huertaFotos").files;
+
+    let huertaFotosBase64 = [];
+    for (let file of huertaFotosInput) {
+        huertaFotosBase64.push(await toBase64(file));
+    }
+
+    agricultorData.huerta = {
+        localizacion,
+        horarios,
+        descripcion,
+        fotos: huertaFotosBase64
+    };
+}
+
+// Enviar datos al backend
+async function sendData() {
+    const tipoCaja = document.querySelector("#form3 select:nth-child(1)").value;
+    const disponibilidad = document.querySelector("#form3 select:nth-child(2)").value;
+    const precio = document.getElementById("precio").value;
+    const envioRecogida = document.querySelector("#form3 select:nth-child(3)").value;
+    const tipoPago = document.querySelector("#form3 select:nth-child(4)").value;
+
+    agricultorData.productos = {
+        tipoCaja,
+        disponibilidad,
+        precio,
+        envioRecogida,
+        tipoPago
     };
 
-    console.log("Enviando agricultor:", agricultor); // Para depuración
+    console.log("Datos enviados:", agricultorData);
 
-    // Enviar al backend con fetch
-    fetch("http://localhost:3000/agricultores", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(agricultor)
-    })
-    .then(response => response.json())
-    .then(data => console.log("Respuesta del servidor:", data))
-    .catch(error => console.error("Error en fetch:", error));
+    try {
+        const response = await fetch("http://localhost:3000/agricultores", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(agricultorData)
+        });
+
+        const result = await response.json();
+        console.log("Respuesta del servidor:", result);
+        alert("Datos enviados correctamente.");
+    } catch (error) {
+        console.error("Error en la petición:", error);
+        alert("Hubo un error al enviar los datos.");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const nextButtons = document.querySelectorAll(".next-btn");
+    const prevButtons = document.querySelectorAll(".prev-btn");
+    const forms = document.querySelectorAll(".form-container");
+    let currentFormIndex = 0;
+
+    // Función de manejo para avanzar en los formularios
+    async function handleNext(index) {
+        try {
+            if (index === 0) await savePersonalData();
+            if (index === 1) await saveHuertaData();
+
+            forms[currentFormIndex].classList.remove("active");
+            currentFormIndex++;
+            forms[currentFormIndex].classList.add("active");
+        } catch (error) {
+            console.error("Error al avanzar en el formulario:", error);
+        }
+    }
+
+    // Usar un bucle `for...of` en lugar de `forEach`
+    for (let button of nextButtons) {
+        button.addEventListener("click", async (event) => {
+            event.preventDefault();
+            const index = Array.from(nextButtons).indexOf(button);
+            await handleNext(index);
+        });
+    }
+
+    for (let button of prevButtons) {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            forms[currentFormIndex].classList.remove("active");
+            currentFormIndex--;
+            forms[currentFormIndex].classList.add("active");
+        });
+    }
+
+    // Evento de envío final
+    document.getElementById("productosForm").addEventListener("submit", async (event) => {
+        event.preventDefault(); // Evitar recarga de página
+        await sendData();
+    });
 });
