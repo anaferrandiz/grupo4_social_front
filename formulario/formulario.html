@@ -14,7 +14,7 @@
 <!-- *********** INICIO HEADER *********** -->
 <header class="header">
     <h1 class="header__h1">
-        <a href="http://127.0.0.1:3000/index.html"> Menja Horta</a>
+        <a href="../index.html"> Menja Horta</a>
     </h1>
     <button class="header__button">&#9776;</button>
     <nav class="header__nav">
@@ -73,17 +73,17 @@
         <form id="huertaForm">
             <div class="mb-3">
                 <label>Localización</label>
-                <select class="form-control" required>
+                <select id="localizacion" class="form-control" required>
                     <option value="">Seleccione una opción</option>
-                    <option value="envio">Horta Nord</option>
-                    <option value="envio">Horta Sud</option>
-                    <option value="envio">Horta Est</option>
+                    <option value="nord">Horta Nord</option>
+                    <option value="sud">Horta Sud</option>
+                    <option value="est">Horta Est</option>
 
                 </select>
             </div>
             <div class="mb-3">
                 <label>Horarios</label>
-                <input type="text" class="form-control" required>
+                <input id="horarios" type="text" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label>Fotos de huerta (+3)</label>
@@ -92,7 +92,7 @@
             </div>
             <div class="mb-3">
                 <label>Descripción</label>
-                <textarea class="form-control" required></textarea>
+                <textarea id="descripcion" class="form-control" required></textarea>
             </div>
             <button type="button" class="btn btn-secondary prev-btn">← Anterior</button>
             <button type="button" class="btn btn-primary next-btn">Siguiente →</button>
@@ -105,25 +105,25 @@
         <form id="productosForm">
             <div class="mb-3">
                 <label>Tipo de caja</label>
-                <select class="form-control" required>
+                <select id="tipoCajaSelect" class="form-control" required>
                     <option value="">Seleccione una opción</option>
-                    <option value="envio">Caja Grande</option>
-                    <option value="envio">Caja Mediana</option>
-                    <option value="envio">Caja Pequeña</option>
-                    <option value="envio">Caja sólo Fruta</option>
+                    <option value="caja-grande">Caja Grande</option>
+                    <option value="caja-mediana">Caja Mediana</option>
+                    <option value="caja-picola">Caja Pequeña</option>
+                    <option value="caja-fruta">Caja sólo Fruta</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label>Disponibilidad</label>
-                <select class="form-control" required>
+                <select id="diponibilidadSelect" class="form-control" required>
                     <option value="">Seleccione una opción</option>
-                    <option value="envio">Lunes</option>
-                    <option value="envio">Martes</option>
-                    <option value="envio">Miércoles</option>
-                    <option value="envio">Jueves</option>
-                    <option value="envio">Viernes</option>
-                    <option value="envio">Sábado</option>
-                    <option value="envio">Domingo</option>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miércoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sábado">Sábado</option>
+                    <option value="domingo">Domingo</option>
                 </select>
             </div>
             <div class="mb-3">
@@ -135,7 +135,7 @@
             </div>
             <div class="mb-3">
                 <label>Envío o recogida</label>
-                <select class="form-control" required>
+                <select id="envioRecogida" class="form-control" required>
                     <option value="">Seleccione una opción</option>
                     <option value="envio">Envío</option>
                     <option value="recogida">Recogida</option>
@@ -143,10 +143,10 @@
             </div>
             <div class="mb-3">
                 <label>Tipo de pago</label>
-                <select class="form-control" required>
+                <select id="tipoPago" class="form-control" required>
                     <option value="">Seleccione una opción</option>
-                    <option value="envio">Tarjeta</option>
-                    <option value="recogida">Efectivo</option>
+                    <option value="tarjeta">Tarjeta</option>
+                    <option value="efectivo">Efectivo</option>
                 </select>
             </div>
             <button type="button" class="btn btn-secondary prev-btn">← Anterior</button>
@@ -155,7 +155,25 @@
     </div>
 </div>
 
-<script src="script.js"></script>
+<!-- recomendacion de form -->
+<!-- <form 
+    id="agricultoresForm"
+    action="localhost:3000/agricultores">
+    <div>
+
+    </div>
+
+    <div>
+
+    </div>
+
+    <div>
+
+    </div>
+
+</form> -->
+
+<!-- <script src="script.js"></script> -->
 <script src="formularioserver.js"></script>
 </body>
 </html>

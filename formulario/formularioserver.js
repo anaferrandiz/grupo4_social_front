@@ -22,20 +22,23 @@ async function toBase64(file) {
 // Enviar datos al backend
 async function sendData() {
     //const fotoFile = document.querySelector('input[type="file"]').files[0];
+
+    const form = document.getElementById('agricultoresForm')
+
     const nombre = document.getElementById("nombre").value;
     const apellidos = document.getElementById("apellidos").value;
     const direccion = document.getElementById("direccion").value;
     const telefono = document.getElementById("telefono").value;
     const email = document.getElementById("email").value;
-    const localizacion = document.querySelector("#form2 select").value;
-    const horarios = document.querySelector("#form2 input").value;
-    const descripcion = document.querySelector("#form2 textarea").value;
+    const localizacion = document.getElementById('localizacion').value;
+    const horarios = document.getElementById('horarios').value;
+    const descripcion = document.getElementById('descripcion').value;
     //const huertaFotosInput = document.getElementById("huertaFotos").files;
-    const tipoCaja = document.querySelector("#form3 select:nth-child(1)").value;
-    const disponibilidad = document.querySelector("#form3 select:nth-child(2)").value;
+    const tipoCaja = document.getElementById('tipoCajaSelect').value;
+    const disponibilidad = document.getElementById('diponibilidadSelect').value;
     const precio = document.getElementById("precio").value;
-    const envioRecogida = document.querySelector("#form3 select:nth-child(3)").value;
-    const tipoPago = document.querySelector("#form3 select:nth-child(4)").value;
+    const envioRecogida = document.getElementById('envioRecogida').value;
+    const tipoPago = document.getElementById('tipoPago').value;
 
     const agricultorData = {
         nombre,
@@ -66,9 +69,10 @@ async function sendData() {
             body: JSON.stringify(agricultorData)
         });
 
+        console.log("Respuesta:", response);
         const result = await response.json();
         console.log("Respuesta del servidor:", result);
-        alert("Datos enviados correctamente.");
+        alert(`Se ha creado correctamente el agricultor ${result.nombre} con email ${result.email}`);
     } catch (error) {
         console.error("Error en la petición:", error);
         alert("Hubo un error al enviar los datos.");
@@ -84,8 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función de manejo para avanzar en los formularios
     async function handleNext(index) {
         try {
-            if (index === 0) await savePersonalData();
-            if (index === 1) await saveHuertaData();
+            // if (index === 0) await savePersonalData();
+            // if (index === 1) await saveHuertaData();
 
             forms[currentFormIndex].classList.remove("active");
             currentFormIndex++;
@@ -112,10 +116,4 @@ document.addEventListener("DOMContentLoaded", () => {
             forms[currentFormIndex].classList.add("active");
         });
     }
-
-    // Evento de envío final
-    document.getElementById("productosForm").addEventListener("submit", async (event) => {
-        event.preventDefault(); // Evitar recarga de página
-        await sendData();
-    });
 });

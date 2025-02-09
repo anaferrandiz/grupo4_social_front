@@ -1,29 +1,49 @@
-document.addEventListener("DOMContentLoaded", async () => { 
-const agricultores = await getAgricultores();
-if (agricultores) {
-    printAgricultores (agricultores)
-}
-})
-const getAgricultores = () => {
-    return fetch('localhost:3000/agricultores')
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Error en la solicitud: ' + response.status);
-            }
-            return response.json();
-        })
-        .catch((error) => {
-            console.error('Ocurrió un error:', error.message);
-            throw new Error('Error al cargar la pagina');
-        });
-};
-
-const printAgricultores = (agricultores) => {
-const list = document.getElementById("agric__data");
-list.innerHTML='';
-agricultores.forEach(agricultor => { 
-    const item = document.createElement('li');
-    item.textContent = agricultor.name;
-    list.appendChild(item);
+window.addEventListener("load", () => {
+    getAgricultores();
+    
 });
+
+async function getAgricultores() {
+    // const idUrl = URLSearchParams()
+  
+      try {
+          const response = await fetch("http://localhost:3000/agricultores/", {
+              method: "GET",
+          });
+  
+          const result = await response.json();
+          let render = document.getElementById('render')
+          result.forEach(agricultor => {
+              // Create a wrapper element and set the innerHTML
+              const tarjetaAgricultor = document.createElement('div');
+              tarjetaAgricultor.innerHTML = `
+                <a href="../html/agricultor/${agricultor.id}.html">
+                  <div class="section__agric">
+                    <div class="wrap__h3__img">
+                      <div class="agric__image-wrapper">
+                        <picture>
+                          <source srcset="../assets/paula_s.webp" media="(max-width:1000px)">
+                          <img src="../assets/paula.webp" alt="Imagen de huerta" class="agric__image" loading="lazy">
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="agric__data">
+                      <h3 class="agric__name">${agricultor.nombre}</h3>
+                      <p class="agric__description">${agricultor.descripcion}</p>
+                      <div class="wrap__contact">
+                        <p class="agric__contact">📞${agricultor.telefono}</p>
+                        <p class="agric__info">Quiero saber más!</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              `;
+          
+              // Append the newly created element to the render element
+              render.appendChild(tarjetaAgricultor.firstElementChild);
+          });
+      } catch (error) {
+          console.error("Error en la petición:", error);
+          alert("Hubo un error al enviar los datos.");
+      }
 }

@@ -12,14 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   nextButtons.forEach((btn, index) => {
       btn.addEventListener("click", () => {
-          if (index === 1) {
-              const files = document.getElementById("huertaFotos").files;
-              if (files.length < 3) {
-                  document.getElementById("photoError").textContent = "Debe subir al menos 3 fotos.";
-                  return;
-              }
-              document.getElementById("photoError").textContent = "";
-          }
+        //   if (index === 1) {
+        //       const files = document.getElementById("huertaFotos").files;
+        //       if (files.length < 3) {
+        //           document.getElementById("photoError").textContent = "Debe subir al menos 3 fotos.";
+        //           return;
+        //       }
+        //       document.getElementById("photoError").textContent = "";
+        //   }
           currentForm++;
           showForm(currentForm);
       });
