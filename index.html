@@ -34,54 +34,62 @@
         </nav>
     </header>
     <!-- *********** FIN HEADER *********** -->
+<!-- *********** INICIO MAIN *********** -->
+<main class="main">
 
-    <!-- *********** INICIO MAIN *********** -->
-    <main class="main">
+    <a href="#arrow" class="main__arrow">
+        <img src="assets/arrow.png" alt="Flecha">
+    </a>
 
-        <a href="#arrow" class="main__arrow">
-            <img src="assets/arrow.png" alt="Flecha">
-        </a>
+    <section class="principal__section">
+        <div class="section__wrapper">
 
-        <section class="principal__section">
-            <div class="section__wrapper">
+            <h2 id="arrow" class="section__h2">Escoge tu zona</h2>
 
-                <h2 id="arrow" class="section__h2">Escoge tu zona</h2>
+            <div class="wrap__section__zones">
 
-                <div class="wrap__section__zones">
-                    <div class="section__zones">
-                        <h3 class="zone__h3">Horta Nord</h3>
-                        <div class="zone__image-wrapper">
+                <div class="section__zones">
+                    <h3 class="zone__h3">Horta Nord</h3>
+                    <div class="zone__image-wrapper">
+                        <button id="horta-nord">
                             <picture>
                                 <source srcset="assets/horta_nord_s.webp" media="(max-width:1000px)">
-                                <img src="assets/horta_nord.webp" alt="Imagen de huerta" class="zone__image" loading="lazy">
+                                <img src="assets/horta_nord.webp" alt="Imagen de huerta Nord" class="zone__image" loading="lazy">
                             </picture>
-                        </div>
-                    </div>
-
-                    <div class="section__zones">
-                        <h3 class="zone__h3">Horta Sud</h3>
-                        <div class="zone__image-wrapper">
-                            <picture>
-                                <source srcset="assets/horta_sud_s.webp" media="(max-width:1000px)">
-                                <img src="assets/horta_sud.webp" alt="Imagen de huerta" class="zone__image" loading="lazy">
-                            </picture>
-                        </div>
-                    </div>
-
-                    <div class="section__zones">
-                        <h3 class="zone__h3">Horta Est</h3>
-                        <div class="zone__image-wrapper">
-                            <picture>
-                                <source srcset="assets/horta_est_s.webp" media="(max-width:1000px)">
-                                <img src="assets/horta_est.webp" alt="Imagen de huerta" class="zone__image" loading="lazy">
-                            </picture>
-                        </div>
+                        </button>
                     </div>
                 </div>
+
+                <div class="section__zones">
+                    <h3 class="zone__h3">Horta Sud</h3>
+                    <div class="zone__image-wrapper">
+                        <button id="horta-sud">
+                            <picture>
+                                <source srcset="assets/horta_sud_s.webp" media="(max-width:1000px)">
+                                <img src="assets/horta_sud.webp" alt="Imagen de huerta Sud" class="zone__image" loading="lazy">
+                            </picture>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section__zones">
+                    <h3 class="zone__h3">Horta Est</h3>
+                    <div class="zone__image-wrapper">
+                        <button id="horta-est">
+                            <picture>
+                                <source srcset="assets/horta_est_s.webp" media="(max-width:1000px)">
+                                <img src="assets/horta_est.webp" alt="Imagen de huerta Est" class="zone__image" loading="lazy">
+                            </picture>
+                        </button>
+                    </div>
+                </div>
+
             </div>
-        </section>
-    </main>
-    <!-- *********** FIN MAIN *********** -->
+        </div>
+    </section>
+    
+</main>
+<!-- *********** FIN MAIN *********** -->
 
     <!-- *********** INICIO FOOTER *********** -->
 

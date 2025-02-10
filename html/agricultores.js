@@ -47,3 +47,56 @@ async function getAgricultores() {
           alert("Hubo un error al enviar los datos.");
       }
 }
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const params = new URLSearchParams(window.Location.search);
+  const zonaId = params.get('zonaId');
+  const zonaName = params.get('zonaName');
+
+  if (zonaId) {
+    try {
+      const zonaTitle = document.getElementById('zona-title');
+    if (zonaName && zonaTitle) {
+      conaTitle.textContent = zonaName.toUpperCase();
+    }
+     //obtener agricultores zona seleccionada
+const agricultores = await getAgricultores(zonaId);
+printAgricultores(agricultores);
+  } catch (error) {
+    console.error("error al cargar los agricultores:", error);
+  }
+} else {
+  console.error("no se recibió zona ID en la URL");
+}});
+
+//llama el endpoin para obtener agricultores por zonas 
+const getAgricultores = async (zonaId) => {
+  try {
+    const response = await fetch(`http://localhost:3000/index/${zonaId}/agricultores`);
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (error) {
+    console.error('Ocurrió un error:', error.message);
+        throw new Error('Error al cargar los agricultores');
+    }
+    throw new Error('Error en la solicitud');
+};
+
+//render de agricultores en el conteiner
+
+const printAgricultores = (agricultores) => {
+  const container = document.querySelector(".left-column");
+  container.innerHTML = ""; 
+
+  agricultores.forEach((agricultores) => {
+    const card = document.createElement("div");
+    card.classList.add("elementos-targeta1");
+
+//card.innerHTML = `
+{/* <img src= "${agricultores.imagen || 'url'}" alt="Imagen de ${agricultores.name}" class="imagen-target` /> */}
+{/* <div class="contenedor-cajitas"> */}
+  // ?????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+// </div>//supongo que va el id
+  }
+}

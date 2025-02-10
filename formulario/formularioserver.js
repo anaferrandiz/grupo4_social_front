@@ -16,7 +16,7 @@ async function toBase64(file) {
     for (let file of huertaFotosInput) {
         huertaFotosBase64.push(await toBase64(file));
     }
-}
+ }
 
 
 // Enviar datos al backend
@@ -41,21 +41,21 @@ async function sendData() {
     const tipoPago = document.getElementById('tipoPago').value;
 
     const agricultorData = {
-        nombre,
-        apellidos,
-        direccion,
-        telefono,
-        email,
+        nombre:nombre,
+        apellidos: apellidos,
+        direccion: direccion,
+        telefono: telefono,
+        email:email,
         //fotoPerfil: fotoBase64,
-        localizacion,
-        horarios,
-        descripcion,
+        localizacion: localizacion,
+        horarios: horarios,
+        descripcion: descripcion,
         //fotos: huertaFotosBase64,
-        tipoCaja,
-        disponibilidad,
-        precio,
-        envioRecogida,
-        tipoPago
+        tipoCaja: tipoCaja,
+        disponibilidad: disponibilidad,
+        precio: precio,
+        envioRecogida: envioRecogida,
+        tipoPago: tipoPago,
     };
 
     console.log("Datos enviados:", agricultorData);
