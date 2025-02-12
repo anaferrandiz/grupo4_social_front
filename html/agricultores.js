@@ -49,10 +49,11 @@ async function getAgricultores() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const params = new URLSearchParams(window.Location.search);
-  const zonaId = params.get('zonaId');
+  const params = new URLSearchParams(window.location.search);
+  console.log('params', params)
+  const zonaId = params.get('zona');
   const zonaName = params.get('zonaName');
-
+  console.log('zone', zonaId)
   if (zonaId) {
     try {
       const zonaTitle = document.getElementById('zona-title');
@@ -70,7 +71,7 @@ printAgricultores(agricultores);
 }});
 
 //llama el endpoin para obtener agricultores por zonas 
-const getAgricultores = async (zonaId) => {
+const getAgricultoresOther = async (zonaId) => {
   try {
     const response = await fetch(`http://localhost:3000/index/${zonaId}/agricultores`);
     if (response.ok) {
@@ -84,19 +85,3 @@ const getAgricultores = async (zonaId) => {
 };
 
 //render de agricultores en el conteiner
-
-const printAgricultores = (agricultores) => {
-  const container = document.querySelector(".left-column");
-  container.innerHTML = ""; 
-
-  agricultores.forEach((agricultores) => {
-    const card = document.createElement("div");
-    card.classList.add("elementos-targeta1");
-
-//card.innerHTML = `
-{/* <img src= "${agricultores.imagen || 'url'}" alt="Imagen de ${agricultores.name}" class="imagen-target` /> */}
-{/* <div class="contenedor-cajitas"> */}
-  // ?????????????????????????????????????????????????????????????????????????????????????????????????????????????????
-// </div>//supongo que va el id
-  }
-}
